@@ -1,0 +1,24 @@
+// @import "../../styles.scss";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.hover1 {
+    color: black !important;
+    text-decoration: none !important;
+   
+}
+.hover1:hover{
+    transition: .2s !important;
+    border-left: 7px solid #2B358C;
+    background-color: #E6E7FF !important;
+}
+header{
+    position: fixed;
+    top: 0; 
+}
+.head1{
+    color: white;
+}
