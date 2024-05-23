@@ -7,7 +7,7 @@ import FooterAdmin from '../HeaderAdmin/FooterAd';
 function Section4Ad(){
     const [reportedContents, setReportedContents] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:3001/issues?reporterName=')
+        fetch('https://wry-seemly-berry.glitch.me/issues?reporterName=')
             .then(response => response.json())
             .then(data => setReportedContents(data))
             .catch(error => console.error('Error fetching reported contents:', error));

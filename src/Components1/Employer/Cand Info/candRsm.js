@@ -27,7 +27,7 @@ function CandInfo() {
     // Check if loggedInUserId is truthy before making the API request
     if (loggedName) {
       // Make the API request using loggedName
-      fetch(`http://localhost:3001/resume?name=${loggedName}`)
+      fetch(`https://wry-seemly-berry.glitch.me/resume?name=${loggedName}`)
         .then(response => {
           if (!response.ok) {
             throw new Error('Failed to fetch user details');

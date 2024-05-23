@@ -50,7 +50,7 @@ function ViewAllCompanies(){
 
   const handleSearch = async () => {
     try {
-      const response = await fetch(`http://localhost:3001/users?${selectedOption}=${searchTerm}`);
+      const response = await fetch(`https://wry-seemly-berry.glitch.me/users?${selectedOption}=${searchTerm}`);
       if (!response.ok) {
         throw new Error('Failed to fetch data');
       }

@@ -9,7 +9,7 @@ const initialState={
 }
 
 
-const BASE_URL="http://localhost:3001/issues/"
+const BASE_URL="https://wry-seemly-berry.glitch.me/issues/"
 
 export const getIssuesFromServer= createAsyncThunk(
     "issues/getIssuesFromServer",
@@ -32,7 +32,7 @@ export const getAnnouncement = createAsyncThunk(
   async (category, { rejectWithValue }) => {
     try {
       // Make your API request here, passing the category filter
-      const response = await fetch(`http://localhost:3001/issues?category=${category}`);
+      const response = await fetch(`https://wry-seemly-berry.glitch.me/issues?category=${category}`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -45,7 +45,7 @@ export const getComment = createAsyncThunk(
   async (category, { rejectWithValue }) => {
     try {
       // Make your API request here, passing the category filter
-      const response = await fetch(`http://localhost:3001/issues?CommentCategory=${category}`);
+      const response = await fetch(`https://wry-seemly-berry.glitch.me/issues?CommentCategory=${category}`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -63,7 +63,7 @@ export const addIssueToServer = createAsyncThunk(
           body:JSON.stringify(issue),
           headers:{"content-type":"application/json;charset=UTF-8"},
       }
-          const response = await fetch("http://localhost:3001/issues/",options);
+          const response = await fetch("https://wry-seemly-berry.glitch.me/issues/",options);
       if (response.ok) {
         const data = response.json();
         return data;
@@ -80,7 +80,7 @@ export const addResponseToServer = createAsyncThunk(
           body:JSON.stringify(issue),
           headers:{"content-type":"application/json;charset=UTF-8"},
       }
-          const response = await fetch("http://localhost:3001/response/",options);
+          const response = await fetch("https://wry-seemly-berry.glitch.me/response/",options);
       if (response.ok) {
         const data = response.json();
         return data;
@@ -102,7 +102,7 @@ export const addResponseToServer = createAsyncThunk(
           body:JSON.stringify(issue),
           headers:{"content-type":"application/json;charset=UTF-8"},
       }
-          const response = await fetch("http://localhost:3001/issues/"+issue.id,options);
+          const response = await fetch("https://wry-seemly-berry.glitch.me/issues/"+issue.id,options);
       if (response.ok) {
         const data = response.json();
         return data;
@@ -121,7 +121,7 @@ export const addResponseToServer = createAsyncThunk(
               body:JSON.stringify(issue),
               headers:{"content-type":"application/json;charset=UTF-8"},
           }
-              const response = await fetch("http://localhost:3001/issues/"+issue.id,options);
+              const response = await fetch("https://wry-seemly-berry.glitch.me/issues/"+issue.id,options);
           if (response.ok) {
             const data = response.json();
             return data;
@@ -136,7 +136,7 @@ export const getIssuesFromServerFaculty= createAsyncThunk(
     "issuesfaculty/getIssuesFromServerFaculty",
     
     async(_,{rejectWithValue})=>{
-        const response=await fetch("http://localhost:3001/issuesfaculty/")
+        const response=await fetch("https://wry-seemly-berry.glitch.me/issuesfaculty/")
         if(response.ok){
             const jsonResponse=await response.json()
             console.log(jsonResponse)
@@ -156,7 +156,7 @@ export const addIssueToServerFaculty = createAsyncThunk(
           body:JSON.stringify(issuefaculty),
           headers:{"content-type":"application/json;charset=UTF-8"},
       }
-          const response = await fetch("http://localhost:3001/issuesfaculty/",options);
+          const response = await fetch("https://wry-seemly-berry.glitch.me/issuesfaculty/",options);
       if (response.ok) {
         const data = response.json();
         return data;
@@ -174,7 +174,7 @@ export const addIssueToServerFaculty = createAsyncThunk(
               body:JSON.stringify(issuefaculty),
               headers:{"content-type":"application/json;charset=UTF-8"},
           }
-              const response = await fetch("http://localhost:3001/issuesfaculty/"+issuefaculty.id,options);
+              const response = await fetch("https://wry-seemly-berry.glitch.me/issuesfaculty/"+issuefaculty.id,options);
           if (response.ok) {
             const data = response.json();
             return data;
@@ -193,7 +193,7 @@ export const addIssueToServerFaculty = createAsyncThunk(
                   body:JSON.stringify(issuefaculty),
                   headers:{"content-type":"application/json;charset=UTF-8"},
               }
-                  const response = await fetch("http://localhost:3001/issuesfaculty/"+issuefaculty.id,options);
+                  const response = await fetch("https://wry-seemly-berry.glitch.me/issuesfaculty/"+issuefaculty.id,options);
               if (response.ok) {
                 const data = response.json();
                 return data;

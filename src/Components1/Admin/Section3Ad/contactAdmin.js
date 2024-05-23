@@ -9,7 +9,7 @@ const ContactCard = () => {
     const [deleteIndex, setDeleteIndex] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:3001/contact/')
+        fetch('https://wry-seemly-berry.glitch.me/contact/')
             .then(response => response.json())
             .then(data => {
                 
@@ -23,7 +23,7 @@ const ContactCard = () => {
 
     const handleDelete = (index) => {
         // Sending delete request to the server
-        fetch(`http://localhost:3001/contact/${contactContents[index].id}`, {
+        fetch(`https://wry-seemly-berry.glitch.me/contact/${contactContents[index].id}`, {
             method: 'DELETE'
         })
         .then(response => response.json())

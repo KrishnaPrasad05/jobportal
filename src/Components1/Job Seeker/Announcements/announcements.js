@@ -43,7 +43,7 @@ function Announcements() {
 
  
   useEffect(() => {
-    fetch('http://localhost:3001/response')
+    fetch('https://wry-seemly-berry.glitch.me/response')
       .then(response => response.json())
       .then(data => {
         console.log('Fetched data:', data); // Log the fetched data

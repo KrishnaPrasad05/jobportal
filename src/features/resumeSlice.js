@@ -10,7 +10,7 @@ const initialState={
 }
 
 
-const BASE_URL="http://localhost:3001/resume/"
+const BASE_URL="https://wry-seemly-berry.glitch.me/resume/"
 
 export const getResumeFromServer= createAsyncThunk(
     "resume/getResumeFromServer",
@@ -33,7 +33,7 @@ export const getAnnouncement = createAsyncThunk(
   async (category, { rejectWithValue }) => {
     try {
       // Make your API request here, passing the category filter
-      const response = await fetch(`http://localhost:3001/resume?category=${category}`);
+      const response = await fetch(`https://wry-seemly-berry.glitch.me/resume?category=${category}`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -47,7 +47,7 @@ export const addResumeToServer = createAsyncThunk(
     'resume/addResumeToServer',
     async (newData) => {
       try {
-        const response = await axios.post('http://localhost:3001/resume/', newData); // Assuming users endpoint on JSON server
+        const response = await axios.post('https://wry-seemly-berry.glitch.me/resume/', newData); // Assuming users endpoint on JSON server
         return response.data;
       } catch (error) {
         throw error;
@@ -67,7 +67,7 @@ export const addResumeToServer = createAsyncThunk(
           body:JSON.stringify(resume),
           headers:{"content-type":"application/json;charset=UTF-8"},
       }
-          const response = await fetch("http://localhost:3001/resume/"+resume.id,options);
+          const response = await fetch("https://wry-seemly-berry.glitch.me/resume/"+resume.id,options);
       if (response.ok) {
         const data = response.json();
         return data;
@@ -86,7 +86,7 @@ export const addResumeToServer = createAsyncThunk(
                   method: "DELETE",
                   headers: { "Content-Type": "application/json" },
               };
-              const response = await fetch(`http://localhost:3001/resume/${resume.id}`, options);
+              const response = await fetch(`https://wry-seemly-berry.glitch.me/resume/${resume.id}`, options);
   
               if (!response.ok) {
                   throw new Error('Failed to delete resume');
@@ -107,7 +107,7 @@ export const getresumeFromServerFaculty= createAsyncThunk(
     "resumefaculty/getresumeFromServerFaculty",
     
     async(_,{rejectWithValue})=>{
-        const response=await fetch("http://localhost:3001/resumefaculty/")
+        const response=await fetch("https://wry-seemly-berry.glitch.me/resumefaculty/")
         if(response.ok){
             const jsonResponse=await response.json()
             console.log(jsonResponse)
@@ -127,7 +127,7 @@ export const addIssueToServerFaculty = createAsyncThunk(
           body:JSON.stringify(issuefaculty),
           headers:{"content-type":"application/json;charset=UTF-8"},
       }
-          const response = await fetch("http://localhost:3001/resumefaculty/",options);
+          const response = await fetch("https://wry-seemly-berry.glitch.me/resumefaculty/",options);
       if (response.ok) {
         const data = response.json();
         return data;
@@ -145,7 +145,7 @@ export const addIssueToServerFaculty = createAsyncThunk(
               body:JSON.stringify(issuefaculty),
               headers:{"content-type":"application/json;charset=UTF-8"},
           }
-              const response = await fetch("http://localhost:3001/resumefaculty/"+issuefaculty.id,options);
+              const response = await fetch("https://wry-seemly-berry.glitch.me/resumefaculty/"+issuefaculty.id,options);
           if (response.ok) {
             const data = response.json();
             return data;
@@ -164,7 +164,7 @@ export const addIssueToServerFaculty = createAsyncThunk(
                   body:JSON.stringify(issuefaculty),
                   headers:{"content-type":"application/json;charset=UTF-8"},
               }
-                  const response = await fetch("http://localhost:3001/resumefaculty/"+issuefaculty.id,options);
+                  const response = await fetch("https://wry-seemly-berry.glitch.me/resumefaculty/"+issuefaculty.id,options);
               if (response.ok) {
                 const data = response.json();
                 return data;

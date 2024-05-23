@@ -44,7 +44,7 @@ function WithHeaderExample() {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await fetch(`http://localhost:3001/users/${id}`);
+        const response = await fetch(`https://wry-seemly-berry.glitch.me/users/${id}`);
         const data = await response.json();
         setUserData(data);
         setLoading(false);

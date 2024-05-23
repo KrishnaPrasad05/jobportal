@@ -24,7 +24,7 @@ function Header() {
     // Check if loggedInUserId is truthy before making the API request
     if (loggedInUserId) {
       // Make the API request using loggedInUserId
-      fetch(`http://localhost:3001/userData/${loggedInUserId}`)
+      fetch(`https://wry-seemly-berry.glitch.me/userData/${loggedInUserId}`)
         .then(response => {
           if (!response.ok) {
             throw new Error('Failed to fetch user details');

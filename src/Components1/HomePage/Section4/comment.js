@@ -11,7 +11,7 @@ function Comment() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:3001/comment?CommentCategory=job seeker')
+        fetch('https://wry-seemly-berry.glitch.me/comment?CommentCategory=job seeker')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Failed to fetch job seeker issues');
@@ -27,7 +27,7 @@ function Comment() {
                 setLoading(false);
             });
 
-        fetch('http://localhost:3001/comment?CommentCategory=employer')
+        fetch('https://wry-seemly-berry.glitch.me/comment?CommentCategory=employer')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Failed to fetch employer issues');

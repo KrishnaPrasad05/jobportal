@@ -39,7 +39,7 @@ const LoginForm = () => {
 
   useEffect(() => {
     // Fetch credentials from JSON server
-    fetch('http://localhost:3001/userData')
+    fetch('https://wry-seemly-berry.glitch.me/userData')
       .then(response => response.json())
       .then(data => setCredentials(data))
       .catch(error => console.error('Error fetching credentials:', error));

@@ -6,7 +6,7 @@ export const fetchJobPostAsync = createAsyncThunk(
   'data/fetchJobData',
   async () => {
     try {
-      const response = await axios.get('http://localhost:3001/users');
+      const response = await axios.get('https://wry-seemly-berry.glitch.me/users');
       const filteredData = response.data.filter(user => user.Role);
       return filteredData;
     } catch (error) {
@@ -18,7 +18,7 @@ export const fetchCompanyAsync = createAsyncThunk(
   'data/fetchCompanyData',
   async () => {
     try {
-      const response = await axios.get('http://localhost:3001/users');
+      const response = await axios.get('https://wry-seemly-berry.glitch.me/users');
       const filteredData = response.data.filter(user => user.CompanyName);
       return filteredData;
     } catch (error) {
@@ -32,7 +32,7 @@ export const getProfile = createAsyncThunk(
   async (loggedInUserId, { rejectWithValue }) => {
     try {
       console.log({loggedInUserId})
-      const response = await fetch(`http://localhost:3001/userData/${loggedInUserId}`);
+      const response = await fetch(`https://wry-seemly-berry.glitch.me/userData/${loggedInUserId}`);
       if (!response.ok) {
         const errorMessage = await response.text(); // Get detailed error message from server
         throw new Error(`Failed to fetch user profile: ${errorMessage}`);
@@ -49,7 +49,7 @@ export const fetchJSAnAsync = createAsyncThunk(
   'data/fetchJSAn',
   async () => {
     try {
-      const response = await axios.get('http://localhost:3001/users');
+      const response = await axios.get('https://wry-seemly-berry.glitch.me/users');
       
       return response.data;
     } catch (error) {
@@ -61,7 +61,7 @@ export const fetchEmpAnAsync = createAsyncThunk(
   'data/fetchEmpAn',
   async () => {
     try {
-      const response = await axios.get('http://localhost:3001/users');
+      const response = await axios.get('https://wry-seemly-berry.glitch.me/users');
      
       return response.data;
     } catch (error) {
@@ -78,7 +78,7 @@ export const updateDataAsync = createAsyncThunk(
         body:JSON.stringify(user),
         headers:{"content-type":"application/json;charset=UTF-8"},
     }
-        const response = await fetch("http://localhost:3001/users/"+user.id,options);
+        const response = await fetch("https://wry-seemly-berry.glitch.me/users/"+user.id,options);
     if (response.ok) {
       const task = response.json();
       return task;
@@ -93,7 +93,7 @@ export const addDataAsync = createAsyncThunk(
   'data/addData',
   async (newData) => {
     try {
-      const response = await axios.post('http://localhost:3001/users', newData); // Assuming users endpoint on JSON server
+      const response = await axios.post('https://wry-seemly-berry.glitch.me/users', newData); // Assuming users endpoint on JSON server
       return response.data;
     } catch (error) {
       throw error;
@@ -104,7 +104,7 @@ export const addUserDataAsync = createAsyncThunk(
   'data/addUserDataAsync',
   async (newData) => {
     try {
-      const response = await axios.post('http://localhost:3001/userData', newData); // Assuming users endpoint on JSON server
+      const response = await axios.post('https://wry-seemly-berry.glitch.me/userData', newData); // Assuming users endpoint on JSON server
       return response.data;
     } catch (error) {
       throw error;
@@ -116,7 +116,7 @@ export const deleteDataAsync = createAsyncThunk(
   'data/deleteData',
   async (id) => {
     try {
-      await axios.delete(`http://localhost:3001/users/${id}`);
+      await axios.delete(`https://wry-seemly-berry.glitch.me/users/${id}`);
       return id;
     } catch (error) {
       throw error;
@@ -132,7 +132,7 @@ export const removePostFromServer = createAsyncThunk(
               method: "DELETE",
               headers: { "Content-Type": "application/json" },
           };
-          const response = await fetch(`http://localhost:3001/users/${resume.id}`, options);
+          const response = await fetch(`https://wry-seemly-berry.glitch.me/users/${resume.id}`, options);
 
           if (!response.ok) {
               throw new Error('Failed to delete resume');
@@ -155,7 +155,7 @@ export const updateProfileToServer = createAsyncThunk(
         body:JSON.stringify(user),
         headers:{"content-type":"application/json;charset=UTF-8"},
     }
-        const response = await fetch("http://localhost:3001/userData/"+user.id,options);
+        const response = await fetch("https://wry-seemly-berry.glitch.me/userData/"+user.id,options);
     if (response.ok) {
       const data = response.json();
       return data;

@@ -19,7 +19,7 @@ function ResponseTable() {
 
   useEffect(() => {
     if (id) {
-      fetch(`http://localhost:3001/response?jobId=${id}`) // Corrected API endpoint
+      fetch(`https://wry-seemly-berry.glitch.me/response?jobId=${id}`) // Corrected API endpoint
         .then(response => {
           if (!response.ok) {
             throw new Error('Failed to fetch user details');
@@ -38,7 +38,7 @@ function ResponseTable() {
 
   useEffect(() => {
     if (id) {
-      fetch(`http://localhost:3001/users/${id}`) // Corrected API endpoint
+      fetch(`https://wry-seemly-berry.glitch.me/users/${id}`) // Corrected API endpoint
         .then(response => {
           if (!response.ok) {
             throw new Error('Failed to fetch user details');
@@ -73,7 +73,7 @@ function ResponseTable() {
       };
   
       // Send a POST request to the server
-      fetch('http://localhost:3001/response', {
+      fetch('https://wry-seemly-berry.glitch.me/response', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

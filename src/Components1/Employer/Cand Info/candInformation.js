@@ -18,7 +18,7 @@ function CandInformation() {
     useEffect(() => {
       const fetchUserData = async () => {
         try {
-          const response = await fetch(`http://localhost:3001/resume/${id}`);
+          const response = await fetch(`https://wry-seemly-berry.glitch.me/resume/${id}`);
           const data = await response.json();
           setUserData(data);
           setLoading(false);

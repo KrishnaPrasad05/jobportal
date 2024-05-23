@@ -9,7 +9,7 @@ const ReportCard = () => {
     const [deleteIndex, setDeleteIndex] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:3001/report/')
+        fetch('https://wry-seemly-berry.glitch.me/report/')
             .then(response => response.json())
             .then(data => {
                 
@@ -23,7 +23,7 @@ const ReportCard = () => {
 
     const handleDelete = (index) => {
         // Sending delete request to the server
-        fetch(`http://localhost:3001/report/${reportedContents[index].id}`, {
+        fetch(`https://wry-seemly-berry.glitch.me/report/${reportedContents[index].id}`, {
             method: 'DELETE'
         })
         .then(response => response.json())

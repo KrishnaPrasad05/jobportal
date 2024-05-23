@@ -37,7 +37,7 @@ function CandInfoPDF() {
 
     useEffect(() => {
         if (loggedName) {
-            fetch(`http://localhost:3001/resume?name=${loggedName}`)
+            fetch(`https://wry-seemly-berry.glitch.me/resume?name=${loggedName}`)
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Failed to fetch user details');
